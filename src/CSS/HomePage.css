@@ -1,0 +1,57 @@
+
+/* to remove the spinner from input type number; */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.homePageSetup{
+    display: flex;
+    flex-direction: column;
+}
+.players{
+    display: flex;
+    flex-direction: row;
+}
+
+.player{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.pl1{
+    color: rgb(255, 124, 2);
+}
+
+.pl2{
+    color: rgb(16, 243, 250);
+}
+
+input{
+    margin-top: 10px;
+    background-color: #0f0f0f;
+    width: 200px;
+    height: 40px;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    
+}
+
+.in1{
+    color: rgb(255, 124, 2);
+}
+.in2{
+        color: rgb(16, 243, 250);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}

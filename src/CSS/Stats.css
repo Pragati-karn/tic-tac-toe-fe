@@ -1,0 +1,22 @@
+.statsBody{
+    margin-top: -100px;
+}
+.statsHeader{
+    color: rgb(129, 239, 38);
+    font: 1em sans-serif;
+}
+
+.p1{
+    color: red;
+    font: .5em sans-serif;
+}
+
+.p2{
+    color: rgb(22, 237, 36);
+    font: .5em sans-serif;
+}
+
+.total{
+    color: rgb(239, 232, 38);
+    font: .5em sans-serif;
+}

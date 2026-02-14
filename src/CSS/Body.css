@@ -1,0 +1,10 @@
+.body1 {
+  background: linear-gradient(135deg, black, rgb(74, 85, 84));
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
