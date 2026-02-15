@@ -1,5 +1,5 @@
 import React from "react";
-import './CSS/body.css'
+import './CSS/Body.css'
 import { HomePage } from "./HomePage";
 import { useLocation } from "react-router-dom";
 import Board from "./components/Board";

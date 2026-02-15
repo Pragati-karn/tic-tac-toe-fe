@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import "../CSS/stats.css";
+import "../CSS/Stats.css";
 import axios from "axios";
 import { payLoadContext } from "../App";
 

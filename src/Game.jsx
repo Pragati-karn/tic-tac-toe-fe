@@ -1,7 +1,7 @@
 import React from 'react'
 import { Stats } from './components/Stats'
 import Board from './components/Board'
-import './CSS/game.css'
+import './CSS/Game.css'
 
 const Game = () => {
   return (
