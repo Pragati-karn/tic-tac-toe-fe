@@ -1,4 +1,4 @@
-.gameContainer {
+/* .gameContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,4 +6,25 @@
   height: 100vh;
   width: 70%;
   justify-content: space-around;
+} */
+
+.gameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  min-height: 100svh;   /* mobile safe height */
+  padding: 20px;
+  gap: 30px;
+}
+
+/* 📱 Mobile layout */
+@media (max-width: 768px) {
+  .gameContainer {
+    flex-direction: column;   /* stack vertically */
+    justify-content: center;
+    gap: 40px;
+  }
 }

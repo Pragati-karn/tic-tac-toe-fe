@@ -1,4 +1,4 @@
-.nav1{
+/* .nav1{
     height: 10vh;
     background-color: black;
     display: flex;
@@ -11,4 +11,36 @@
     color: rgb(207, 240, 88);
     margin-left: 50px;
     font-family: 'Montserrat';
+} */
+
+.nav1{
+  min-height: 60px;        /* safer than 10vh */
+  width: 100%;
+  
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center on mobile */
+
+  padding: 0 20px;
+  opacity: 0.9;
+
+  border-bottom: 2px solid rgb(118, 120, 119);
+}
+
+.nav2{
+  font-size: clamp(1.4rem, 5vw, 2.5rem);
+  color: rgb(207, 240, 88);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Desktop adjustment */
+@media (min-width: 768px){
+  .nav1{
+    justify-content: flex-start;
+  }
+
+  .nav2{
+    margin-left: 40px;
+  }
 }

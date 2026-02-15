@@ -3,13 +3,13 @@ import "./CSS/HomePage.css";
 import Button from "./components/Button1";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { payLoadContext } from "./App"; 
+import { payLoadContext } from "./App";
 
 import axios from "axios";
 
 export const HomePage = () => {
   const navigate = useNavigate();
-  const {setPayload } = useContext(payLoadContext);
+  const { setPayload } = useContext(payLoadContext);
 
   const [name1, setName1] = useState("");
   const [name2, setName2] = useState("");
@@ -21,21 +21,22 @@ export const HomePage = () => {
     player2: { name: name2, age: age2 },
   };
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(
+        "https://tic-tac-toe-be-2.onrender.com/submitPlayer",
+        payload,
+      );
+      setPayload(payload);
+      navigate("/getBoard");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to start game");
+    }
+  };
 
-const onSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    await axios.post("http://localhost:8081/tictactoe/submitPlayer", payload);
-    setPayload(payload);
-    navigate("/getBoard");
-  } catch (err) {
-    console.error(err);
-    alert("Failed to start game");
-  }
-};
-
-console.log(payload);
-
+  console.log(payload);
 
   return (
     <div className="homePageSetup">

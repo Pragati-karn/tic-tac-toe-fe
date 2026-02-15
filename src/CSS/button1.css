@@ -1,4 +1,4 @@
-.game-btn {
+/* .game-btn {
   padding: 14px 32px;
   font-family: 'Fredoka', sans-serif;
   font-size: 20px;
@@ -20,4 +20,39 @@
 
 .game-btn:active {
   transform: scale(0.96);
+} */
+
+.game-btn {
+  padding: clamp(10px, 3vw, 14px) clamp(20px, 6vw, 32px);
+
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 600;
+
+  color: #e5f108;
+  background: linear-gradient(135deg, #171817, #185a9d);
+
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+
+  width: 100%;
+  max-width: 280px; /* prevents over stretching */
 }
+
+/* Hover effect (only works on desktop) */
+@media (hover: hover) {
+  .game-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Click effect */
+.game-btn:active {
+  transform: scale(0.96);
+}
+

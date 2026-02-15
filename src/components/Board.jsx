@@ -7,7 +7,6 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { payLoadContext } from "../App";
 
-
 const Board = () => {
   const navigate = useNavigate();
   const [board, setBoard] = useState([[]]);
@@ -17,7 +16,7 @@ const Board = () => {
   const GoBack = async () => {
     try {
       navigate("/");
-      await axios.post("http://localhost:8081/tictactoe/getBoard");
+      await axios.post("https://tic-tac-toe-be-2.onrender.com/getBoard");
     } catch (err) {
       console.error(err);
     }
@@ -25,7 +24,9 @@ const Board = () => {
 
   const handleUndo = async () => {
     try {
-      const res = await axios.post("http://localhost:8081/tictactoe/undoMove");
+      const res = await axios.post(
+        "https://tic-tac-toe-be-2.onrender.com/undoMove",
+      );
       setBoard(res.data.board);
       setTurn(res.data.turn);
     } catch (err) {
@@ -35,7 +36,7 @@ const Board = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/tictactoe/getBoard")
+      .get("https://tic-tac-toe-be-2.onrender.com/getBoard")
       .then((res) => {
         setBoard(res.data.board);
         setTurn(res.data.turn);
@@ -47,12 +48,12 @@ const Board = () => {
     if (!move) return;
 
     axios
-      .post("http://localhost:8081/tictactoe/writeValue", move)
+      .post("https://tic-tac-toe-be-2.onrender.com/writeValue", move)
       .then((res) => {
         setBoard(res.data.board);
         setTurn(res.data.turn);
 
-        return axios.post("http://localhost:8081/tictactoe/winner");
+        return axios.post("https://tic-tac-toe-be-2.onrender.com/winner");
       })
       .then((winnerRes) => {
         console.log("Winner:", winnerRes.data);
@@ -75,7 +76,9 @@ const Board = () => {
     if (winner === "") return;
     try {
       const resetBoard = async () => {
-        const res = await axios.get("http://localhost:8081/tictactoe/getBoard");
+        const res = await axios.get(
+          "https://tic-tac-toe-be-2.onrender.com/getBoard",
+        );
         setBoard(res.data.board);
         setTurn(res.data.turn);
       };
